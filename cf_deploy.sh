@@ -17,5 +17,7 @@ else
         --tags ${TagParams} \
         --region ${Region} \
         --profile ${Profile} \
-        --capabilities CAPABILITY_NAMED_IAM
+        --capabilities CAPABILITY_NAMED_IAM && \
+    npm install && \
+    date
 fi
