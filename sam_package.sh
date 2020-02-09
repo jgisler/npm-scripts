@@ -13,7 +13,7 @@ else
         --output-template-file ${templateName}-out.yaml \
         --s3-bucket ${DeploymentBucket} \
         --s3-prefix ${DeploymentPrefix} \
-        --force \
+        --force-upload \
         --region ${Region} \
         --profile ${Profile}
 fi
