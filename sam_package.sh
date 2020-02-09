@@ -6,11 +6,11 @@ then
     echo "Usage: sam_package.sh {templateName}";
     exit 1;
 else
-    templateName=$1 && \
+    templatePath=$1 && \
     source .env && \
-    aws cloudformation package \
-        --template-file sam/${templateName}.yaml \
-        --output-template-file ${templateName}-out.yaml \
+    sam package \
+        --template-file ${templatePath} \
+        --output-template-file ${templatePath}.out \
         --s3-bucket ${DeploymentBucket} \
         --s3-prefix ${DeploymentPrefix} \
         --region ${Region} \
