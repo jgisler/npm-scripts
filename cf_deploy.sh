@@ -8,7 +8,8 @@ then
 else
     templateName=$1 && \
     source .env && \
-    aws cloudformation deploy --stack-name ${StackName} \
+    aws cloudformation deploy \
+        --stack-name ${StackName} \
         --template-file ${templateName}-out.yaml \
         --parameter-overrides ${CloudFormationParams} \
         --no-fail-on-empty-changeset \

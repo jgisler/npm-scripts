@@ -9,12 +9,12 @@ else
     templateName=$1 && \
     source .env && \
     sam deploy \
-        --template-file ${templateName} \
         --stack-name ${StackName} \
+        --template-file ${templateName}-out.yaml \
+        --parameter-overrides ${CloudFormationParams} \
         --no-fail-on-empty-changeset \
         --s3-bucket ${DeploymentBucket} \
         --s3-prefix ${DeploymentPrefix} \
-        --parameter-overrides ${CloudFormationParams} \
         --tags ${TagParams} \
         --region ${Region} \
         --profile ${Profile} \

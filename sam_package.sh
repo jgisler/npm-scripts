@@ -6,11 +6,11 @@ then
     echo "Usage: sam_package.sh {templateName}";
     exit 1;
 else
-    templatePath=$1 && \
+    templateName=$1 && \
     source .env && \
     sam package \
-        --template-file ${templatePath} \
-        --output-template-file ${templatePath}.out \
+        --template-file sam/${templateName}.yaml \
+        --output-template-file ${templateName}-out.yaml \
         --s3-bucket ${DeploymentBucket} \
         --s3-prefix ${DeploymentPrefix} \
         --region ${Region} \
