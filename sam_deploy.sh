@@ -9,6 +9,7 @@ else
     templateName=$1 && \
     source .env && \
     sam deploy \
+        --template-file ${templateName} \
         --stack-name ${StackName} \
         --no-fail-on-empty-changeset \
         --s3-bucket ${DeploymentBucket} \
